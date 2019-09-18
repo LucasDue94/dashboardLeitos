@@ -1,0 +1,16 @@
+<section class="container">
+  <header class="app-header">
+    <h1>Gerenciamento de Leitos</h1>
+  </header>
+  <main class="main-content">
+    <section class="row" *ngFor="let setor of setores">
+      <h2 class="setor">{{setor}}</h2>
+      <span class="leito" *ngFor="let leito of getLeitos(setor)">
+      {{transformText(leito.numero)}}
+    </span>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
+</section>
