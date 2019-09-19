@@ -1,9 +1,10 @@
 @import 'fonts/roboto.scss';
-
+@import "colors";
 * {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  color: $gray-80;
 }
 
 body, app-main {

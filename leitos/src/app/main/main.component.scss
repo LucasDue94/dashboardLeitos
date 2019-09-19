@@ -1,57 +1,176 @@
 @import "../../colors";
 
 .app-header {
-  padding: 8px;
   display: flex;
+  padding: 8px;
   align-items: center;
   justify-content: center;
+
+  & {
+    text-transform: uppercase;
+  }
+
+  .title {
+    margin: 5px 0;
+
+    & {
+      font-size: 22px;
+      font-weight: 500;
+      color: $white;
+    }
+  }
 }
 
 .container {
+  display: flex;
   position: relative;
   width: 100%;
-  height:100vh;
-  background-color: $gray-20;
-  display: flex;
+  height: 100vh;
   flex-direction: column;
+
+  & {
+    background-color: $green-default ;
+  }
 }
 
 .main-content {
   display: flex;
-  background-color: $white;
+  align-content: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  font-size: 18px;
-  color: $gray-80;
-  margin: 0 20px;
+  margin: 0 10px;
   height: 90vh;
+  padding: 0 15px;
+
+  & {
+    background-color: $gray-20;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid $gray-50;
+    box-shadow: 1px 1px 10px $gray-80;
+  }
 }
 
 
 .row {
-  //height: 30px;
   display: flex;
-  align-items: center;
-  border: 1px solid $gray-50;
-  border-left: none;
-  border-right: none;
+  margin: 15px 0;
   padding: 10px;
-  margin: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & {
+    border: 1px solid $gray-30;
+    border-left: none;
+    border-right: none;
+  }
+
 
   .setor {
-    font-size: 20px;
-    font-weight: bold;
+    margin-right: 8px;
+
+    & {
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
 
-  .leito {
+  .leito-container {
+    margin: 10px 0;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    font-weight: 500;
+
+    .tipo-leito {
+      margin-left: 15px;
+      margin-right: 5px;
+
+      & {
+        font-size: 18px;
+        font-weight: 400;
+        font-style: italic;
+      }
+    }
+
+    .leito {
+      display: flex;
+      margin: 0 3px;
+      align-items: center;
+      justify-content: center;
+      width: 3.5em;
+      height: 1.5em;
+
+      & {
+        font-weight: 500;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px $gray-80;
+      }
+    }
+  }
+}
+
+.legenda-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+
+  & {
+    background-color: $green-default;
+  }
+
+  .legenda {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10px;
+
+    .desc {
+      color: $white;
+      font-weight: 400;
+    }
+  }
+
+  .legenda-cor {
+    display: flex;
+    margin: 0 8px;
+    flex-direction: row;
+    align-items: center;
     width: 3.5em;
     height: 1.5em;
-    border-radius: 5px;
-    border: 1px solid $gray-50;
-    margin: 0 5px;
+    & {
+      font-weight: 500;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px $gray-80;
+    }
   }
+}
+
+.ocupado, .higienizacao, .manutencao {
+  box-shadow: 1px 1px 5px $black;
+  color: $white;
+}
+
+.ocupado {
+  background-color: $red;
+}
+
+.higienizacao {
+  background-color: $blue;
+}
+
+.reservado {
+  background-color: $orange;
+}
+
+.manutencao {
+  background-color: $brown;
+}
+
+.interditado {
+  background-color: $yellow;
+}
+
+.liberado {
+  background-color: $white;
 }

@@ -19,7 +19,6 @@ export class LeitoService {
       .subscribe((json: Leito[]) => {
         subject.next(json.map((propertyName: any) => new Leito(propertyName)))
       }, error => {
-        console.log(error)
       });
     return subject.asObservable();
   }

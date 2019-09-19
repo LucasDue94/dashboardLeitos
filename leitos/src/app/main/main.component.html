@@ -1,16 +1,20 @@
 <section class="container">
   <header class="app-header">
-    <h1>Gerenciamento de Leitos</h1>
+    <h1 class="title">Gerenciamento de Leitos</h1>
   </header>
   <main class="main-content">
-    <section class="row" *ngFor="let setor of setores">
+    <section class="row" *ngFor="let setor of setoresOrdenados">
       <h2 class="setor">{{setor}}</h2>
-      <span class="leito" *ngFor="let leito of getLeitos(setor)">
-      {{transformText(leito.numero)}}
-    </span>
+      <div class="leito-container" *ngFor="let leito of getLeitos(setor)">
+        <h3 class="tipo-leito" *ngIf="leito.tipo!=''">{{leito.tipo}}</h3>
+        <span [ngClass]="[getColor(leito.status)]" class="leito">{{padText(leito.numero)}}</span>
+      </div>
     </section>
   </main>
-  <footer>
-
+  <footer class="legenda-container">
+    <section class="legenda" *ngFor="let status of statusArray">
+      <span class="legenda-cor" [ngClass]="status.class"></span>
+      <h3 class="desc">{{status.desc}}</h3>
+    </section>
   </footer>
 </section>
